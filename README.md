@@ -94,4 +94,10 @@ Doing this removes the default cluster_name (Test Cluster) from the system table
 - 실행해보기
 ```
     (venv)$ python a.py
+    OrderedDict([('0', 'val'), ('1', 'val'), ('2', 'val'), ('3', 'val'), ('4', 'val'), ('5', 'val'), ('6', 'val'), ('7', 'val'), ('8', 'val'), ('9', 'val'), ('col_name', 'col_val'), ('col_name2', 'col_val2')])
+    OrderedDict([('col_name', 'col_val'), ('col_name2', 'col_val2')])
+    OrderedDict([('5', 'val'), ('6', 'val'), ('7', 'val')])
+    OrderedDict([('col_name2', 'col_val2'), ('col_name', 'col_val'), ('9', 'val')])
+    OrderedDict([('row1', OrderedDict([('name1', 'val1'), ('name2', 'val2')])), ('row2', OrderedDict([('foo', 'bar')]))])
+    row_key => OrderedDict([('0', 'val'), ('1', 'val'), ('2', 'val'), ('3', 'val'), ('4', 'val'), ('5', 'val'), ('6', 'val'), ('7', 'val'), ('8', 'val'), ('9', 'val'), ('col_name', 'col_val'), ('col_name2', 'col_val2')])
 ```
