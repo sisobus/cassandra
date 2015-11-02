@@ -34,8 +34,8 @@ Doing this removes the default cluster_name (Test Cluster) from the system table
 ```
 - virtualenv로 독립적인 파이썬 개발 환경 만들기
 ```
-    $ virtualenv venv
-    $ . venv/bin/activate
+    $ virtualenv venv : 이 커맨드를 실행하면 venv라는 디렉토리가 생성된다.
+    $ . venv/bin/activate : python코드를 실행할 때에는 항상 activate상태여야한다.
 ```
 - pip 를 이용하여 pycassa 설치하기
 ```
