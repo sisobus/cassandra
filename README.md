@@ -2,24 +2,24 @@
 for Ahn
 
 ## ubuntu에 Cassandra 설치하기 
-### java 설치 확인
+- java 설치 확인
 ```
     $ java -version
 ```
-### Add the DataStax Community repository to the /etc/apt/sources.list.d/cassandra.sources.list
+- Add the DataStax Community repository to the /etc/apt/sources.list.d/cassandra.sources.list
 ```
     $ echo "deb http://debian.datastax.com/community stable main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
 ```
-### Add the DataStax repository key to your aptitude trusted keys.
+- Add the DataStax repository key to your aptitude trusted keys.
 ```
     $ curl -L http://debian.datastax.com/debian/repo_key | sudo apt-key add -
 ```
-### apt-get 업데이트 및 설치
+- apt-get 업데이트 및 설치
 ```
     $ sudo apt-get update
     $ sudo apt-get install dsc20=2.0.11-1 cassandra=2.0.11
 ```
-### Because the Debian packages start the Cassandra service automatically, you must stop the server and clear the data:
+- Because the Debian packages start the Cassandra service automatically, you must stop the server and clear the data:
 Doing this removes the default cluster_name (Test Cluster) from the system table. All nodes must use the same cluster name.
 ```
     $ sudo service cassandra stop
@@ -28,23 +28,23 @@ Doing this removes the default cluster_name (Test Cluster) from the system table
 ```
 
 ## virtualenv로 python 개발 환경 만들기
-### 카산드라 테스트 할 디렉토리로 감
+- 카산드라 테스트 할 디렉토리로 감
 ```
     $ cd /home/sisobus/cassandra
 ```
-### virtualenv로 독립적인 파이썬 개발 환경 만들기
+- virtualenv로 독립적인 파이썬 개발 환경 만들기
 ```
     $ virtualenv venv
     $ . venv/bin/activate
 ```
-### pip 를 이용하여 pycassa 설치하기
+- pip 를 이용하여 pycassa 설치하기
 ```
     (venv)$ pip install pycassa
     (venv)$ pip freeze : 설치 되어있는지 확인
 ```
 
 ## cassandra-cli 를 이용하여 테스트 keyspace 및 column family를 추가
-### cassandra-cli 실행 및 keyspace, column family 추가
+- cassandra-cli 실행 및 keyspace, column family 추가
 ```
     (venv)$ cassandra-cli
     Connected to: "Test Cluster" on 127.0.0.1/9160
@@ -63,7 +63,7 @@ Doing this removes the default cluster_name (Test Cluster) from the system table
 ```
 
 ## pycassa로 테스트 해보기
-### test python source code 작성하기
+- test python source code 작성하기
 ```
     (venv)$ vi a.py
 
@@ -91,7 +91,7 @@ Doing this removes the default cluster_name (Test Cluster) from the system table
     for key, columns in result:
         print key, '=>', columns
 ```
-### 실행해보기
+- 실행해보기
 ```
     (venv)$ python a.py
 ```
