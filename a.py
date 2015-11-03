@@ -21,3 +21,4 @@ print cf.multiget(['row1', 'row2'])
 result = cf.get_range(start='row_key5', finish='row_key7')
 for key, columns in result:
     print key, '=>', columns
+
